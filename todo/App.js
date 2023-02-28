@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import Header from './components/header.js'
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* HEADER */}
+      <Header/>
       <View style={styles.content}>
         {/* TODO Form */}
         <View style={styles.list}>
