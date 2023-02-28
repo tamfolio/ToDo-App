@@ -9,6 +9,12 @@ export default function App() {
     {text: 'Chelsea win', key: "2"},
     {text: 'Mancity win', key: "3"},
   ])
+
+  const pressHandler = (key) =>{
+    setTodos((prevTodos) => {
+      return prevTodos.filter( todo => todo.key != key);
+    })
+  }
   return (
     <View style={styles.container}>
       {/* HEADER */}
@@ -19,7 +25,7 @@ export default function App() {
             <FlatList
               data={todos}
               renderItem={({item}) => (
-                <TodoItem item={item}/>
+                <TodoItem item={item} pressHandler={pressHandler}/>
             )}
             />
         </View>
