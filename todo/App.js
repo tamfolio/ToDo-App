@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert } from 'react-native';
 import Header from './components/header.js'
 import TodoItem from './components/todoitem.js';
 import AddTodo from './components/AddTodo.js';
@@ -25,6 +25,10 @@ export default function App() {
           ...prevTodos
         ]
     })
+    } else {
+      Alert.alert("Oops!", "Todos must be over 3 chars Long",[
+        {text:"Understood", onPress: () => console.log('alert closed')}
+      ])
     }
     
   }
