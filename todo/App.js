@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyb
 import Header from './components/header.js'
 import TodoItem from './components/todoitem.js';
 import AddTodo from './components/AddTodo.js';
+import SandBox from './components/sandbox.js';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -33,26 +34,27 @@ export default function App() {
     
   }
   return (
-    <TouchableWithoutFeedback onPress={()=> {
-      Keyboard.dismiss();
-    }}>
-      <View style={styles.container}>
-      {/* HEADER */}
-      <Header/>
-      <View style={styles.content}>
-        <AddTodo submitHandler={submitHandler}/>
-        {/* TODO Form */}
-        <View style={styles.list}>
-            <FlatList
-              data={todos}
-              renderItem={({item}) => (
-                <TodoItem item={item} pressHandler={pressHandler}/>
-            )}
-            />
-        </View>
-      </View>
-    </View>
-  </TouchableWithoutFeedback>
+    <SandBox/>
+  //   <TouchableWithoutFeedback onPress={()=> {
+  //     Keyboard.dismiss();
+  //   }}>
+  //     <View style={styles.container}>
+  //     {/* HEADER */}
+  //     <Header/>
+  //     <View style={styles.content}>
+  //       <AddTodo submitHandler={submitHandler}/>
+  //       {/* TODO Form */}
+  //       <View style={styles.list}>
+  //           <FlatList
+  //             data={todos}
+  //             renderItem={({item}) => (
+  //               <TodoItem item={item} pressHandler={pressHandler}/>
+  //           )}
+  //           />
+  //       </View>
+  //     </View>
+  //   </View>
+  // </TouchableWithoutFeedback>
     
   );
 }
