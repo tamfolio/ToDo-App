@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, FlatList, Alert } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback } from 'react-native';
 import Header from './components/header.js'
 import TodoItem from './components/todoitem.js';
 import AddTodo from './components/AddTodo.js';
@@ -33,7 +33,8 @@ export default function App() {
     
   }
   return (
-    <View style={styles.container}>
+    <TouchableWithoutFeedback>
+      <View style={styles.container}>
       {/* HEADER */}
       <Header/>
       <View style={styles.content}>
@@ -49,6 +50,8 @@ export default function App() {
         </View>
       </View>
     </View>
+  </TouchableWithoutFeedback>
+    
   );
 }
 
