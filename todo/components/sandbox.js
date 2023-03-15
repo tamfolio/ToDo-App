@@ -14,12 +14,13 @@ export default function SandBox(){
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        paddingTop: 40,
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        paddingTop: 40, 
         backgroundColor: '#ddd'
     },
     boxOne: {
-        backgroundColor: "green",
+        backgroundColor: "violet",
         padding: 10
     },
     boxTwo: {
